@@ -3,6 +3,9 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, SelectField
 from wtforms.validators import DataRequired, Email, EqualTo, Length, ValidationError
 import numpy as np
+import os
+from os.path import join, dirname
+from dotenv import load_doten
 from tensorflow.keras.models import load_model
 from PIL import Image
 from pymongo import MongoClient
