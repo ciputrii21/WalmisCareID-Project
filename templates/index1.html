@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>WalmisCareID - Halaman Utama</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="static/img/favicon.png" rel="icon">
+  <link href="static/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800|Montserrat:300,400,700" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="static/vendor/aos/aos.css" rel="stylesheet">
+  <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="static/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="static/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="static/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="static/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="static/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Reveal - v4.8.0
+  * Template URL: https://bootstrapmade.com/reveal-bootstrap-corporate-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+<!-- ======= Header ======= -->
+<header id="header" class="d-flex align-items-center">
+  <div class="container d-flex justify-content-between">
+
+    <div id="logo">
+      <h1>
+        <a href="/">
+          <img src="static/img/logocare.png" alt="WalmisCareID Logo" width="100" height="auto">Walmis<span>CareID</span>
+
+        </a>
+      </h1>
+    </div>
+
+    <nav id="navbar" class="navbar">
+      <ul>
+        <li><a class="nav-link scrollto active" href="#hero">Beranda</a></li>
+        <li><a class="nav-link scrollto" href="#about">Tentang</a></li>
+        <li><a class="nav-link" href="{{ url_for('logout') }}">Logout</a></li>
+      </ul>
+      <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav><!-- .navbar -->
+
+  </div>
+</header><!-- End Header -->
+
+
+  <!-- ======= hero Section ======= -->
+  <section id="hero">
+
+    <div class="hero-content" data-aos="fade-up">
+      <h2>Identifikasi Penyakit Paru-paru</h2>
+      <h2>Sekarang!</h2>
+      <div>
+        <form method="POST" action="/predict" enctype="multipart/form-data">
+          <input
+            type="file"
+            accept="image/*"
+            class="form-control"
+            id="photo"
+            name="photo"
+          />
+          <button type="submit" class="btn-get-started scrollto">
+            Identifikasi
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div class="hero-slider swiper">
+      <div class="swiper-wrapper">
+        <!-- <div class="swiper-slide" style="background-image: url('static/img/hero-carousel/a.jpg');"></div> -->
+        <!-- <div class="swiper-slide" style="background-image: url('static/img/hero-carousel/b.jpg');"></div>
+        <div class="swiper-slide" style="background-image: url('static/img/hero-carousel/c.jpg');"></div> -->
+        <div class="swiper-slide" style="background-image: url('static/img/hero-carousel/d.jpg');"></div>
+        <!-- <div class="swiper-slide" style="background-image: url('static/img/hero-carousel/e.jpg');"></div> -->
+        <div class="swiper-slide" style="background-image: url('static/img/hero-carousel/f.jpg');"></div>
+        <!-- <div class="swiper-slide" style="background-image: url('static/img/hero-carousel/1.png');"></div> -->
+        <div class="swiper-slide" style="background-image: url('static/img/hero-carousel/2.png');"></div>
+        <div class="swiper-slide" style="background-image: url('static/img/hero-carousel/3.png');"></div>
+      </div>
+    </div>
+
+  </section><!-- End Hero Section -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about">
+      <div class="container" data-aos="fade-up">
+        <div class="row">
+          <div class="col-lg-6 about-img">
+            <img src="static/img/about-img4.png" alt="">
+          </div>
+
+          <div class="col-lg-6 content">
+            <h2>WalmisCareID adalah aplikasi yang dapat mengidentifikasi tingkat kesehatan paru-paru berdasarkan gambar.</h2>
+            <h3>Aplikasi ini memiliki keunggulan seperti berikut:</h3>
+
+            <ul>
+              <li><i class="bi bi-check-circle"></i> Model deep learning dibuat menggunakan 142 dataset train citra paru-paru di RSUD Walanda Maramis.</li>
+              <li><i class="bi bi-check-circle"></i> Aplikasi ini dapat mengidentifikasi 3 kelas paru pada citra X-RAY.</li>
+              <li><i class="bi bi-check-circle"></i> Desain yang mudah digunakan dan responsif di semua perangkat seperti ponsel, windows, dan tablet.</li>
+            </ul>
+
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+  <!-- ======= classes Section ======= -->
+  <section id="classes" class="classes section-bg">
+    <div class="container" data-aos="fade-up">
+  
+      <div class="section-header">
+        <h2>Klasifikasi Penyakit Paru</h2>
+        <p>Berikut ini merupakan 3 kelas dalam pengklasifikasi penyakit paru.</p> 
+      </div>
+  
+      <div class="row justify-content-center">
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+          <div class="member" data-bs-toggle="modal" data-bs-target="#normalModal">
+            <img src="static/img/paru/Bronchitis1.jpg" alt="">
+            <h4>Bronchitis</h4>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+          <div class="member" data-bs-toggle="modal" data-bs-target="#pneumoniaModal">
+            <img src="static/img/paru/pneumonia1.jpg" alt="">
+            <h4>Pneumonia</h4>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+          <div class="member" data-bs-toggle="modal" data-bs-target="#tbModal">
+            <img src="static/img/paru/tb1.png" alt="">
+            <h4>Tuberculosis</h4>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+  </section><!-- End class Section -->
+
+  <!-- Modals -->
+<div class="modal fade" id="normalModal" tabindex="-1" aria-labelledby="normalModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="normalModalLabel">Bronchitis</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Bronkitis adalah peradangan pada saluran udara utama ke paru-paru yang menyebabkan batuk berdahak dan sering disebabkan oleh infeksi atau iritasi seperti asap rokok.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="pneumoniaModal" tabindex="-1" aria-labelledby="pneumoniaModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="pneumoniaModalLabel">Pneumonia</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Pneumonia adalah infeksi yang menyebabkan peradangan pada kantung-kantung udara di satu atau kedua paru-paru. Kantung udara bisa terisi dengan cairan atau nanah, yang dapat terlihat pada gambar X-ray sebagai bercak putih atau opasitas.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="tbModal" tabindex="-1" aria-labelledby="tbModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="tbModalLabel">Tuberculosis</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Tuberculosis (TB) adalah infeksi bakteri yang biasanya menyerang paru-paru. Gambar X-ray dari seseorang dengan TB sering menunjukkan nodul atau lesi di bagian atas paru-paru, yang bisa terlihat sebagai bayangan atau bercak abnormal.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+  
+          <div class="col-lg-4 col-md-6 footer-info">
+            <h3>WalmisCareID</h3>
+            <p>Aplikasi berbasis web untuk mengidentifikasi penyakit paru-paru dengan menggunakan gambar X-ray.</p>
+          </div>
+  
+          <div class="col-lg-4 col-md-6 footer-links">
+            <h4>Informasi</h4>
+            <ul>
+              <li><i class="bi bi-chevron-right"></i> <a href="#hero">Beranda</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#about">Tentang</a></li>
+            </ul>
+          </div>
+  
+          <div class="col-lg-4 col-md-6 footer-contact">
+            <h4>Kontak Kami</h4>
+            <p>
+              RSUD Walanda Maramis<br>
+              Minahasa Utara, Sulawesi Utara<br>
+              Indonesia<br>
+              <strong>Telepon:</strong> +6281280015167<br>
+              <strong>Email:</strong> rsudmwm@yahoo.com<br>
+              <strong>Website:</strong><a href="https://rsudmwm.minutkab.go.id/"> rsudmwm.minutkab.go.id<br></a>
+            </p>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>WalmisCareID</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/reveal-bootstrap-corporate-template/ -->
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <!-- Vendor JS Files -->
+  <script src="static/vendor/aos/aos.js"></script>
+  <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="static/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="static/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="static/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="static/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="static/js/main.js"></script>
+
+</body>
+
+</html>
